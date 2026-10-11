@@ -9,4 +9,12 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('api/status')
+  getStatus(): { status: string; message: string } {
+    return {
+      status: 'success',
+      message: 'NestJS with PostgreSQL integration is running',
+    };
+  }
 }
